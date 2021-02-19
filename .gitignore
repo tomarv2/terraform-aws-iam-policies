@@ -78,6 +78,3 @@ _testmain.go
 /test/pass.out
 /test/run.out
 /test/times.out
-
-# ignore requried vars file
-**/test_data
