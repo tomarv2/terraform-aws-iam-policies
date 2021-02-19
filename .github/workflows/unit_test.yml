@@ -36,7 +36,8 @@ jobs:
         working-directory: example
         run: |
           # TF ENVIRONMENT
-          cd ../example/base
+          cd base
+          pwd
           tf -cloud aws plan -var-file ../test_data/test-managed-policy.tfvars
         env:
           # TF ENVIRONMENT
