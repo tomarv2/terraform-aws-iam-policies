@@ -36,8 +36,8 @@ jobs:
         working-directory: example/base
         run: |
           # TF ENVIRONMENT
-          ls
-          tf -cloud aws plan -var-file ./../test_data/test-managed-policy.tfvars
+          ls ../
+          tf -cloud aws plan -var-file ../test_data/test-managed-policy.tfvars
         env:
           # TF ENVIRONMENT
           TF_AWS_BUCKET: "${{ secrets.TF_NONPROD_AWS_BUCKET }}"
