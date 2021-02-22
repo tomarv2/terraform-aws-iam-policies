@@ -3,7 +3,7 @@ name: Unit Tests
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   build:
@@ -15,6 +15,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
@@ -26,7 +27,7 @@ jobs:
           pip install tfremote
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Run terraform
+      - name: Install terraform
         uses: hashicorp/setup-terraform@v1
         with:
          terraform_version: 0.14.7
@@ -35,8 +36,6 @@ jobs:
       - name: Run terraform plan
         working-directory: example/base
         run: |
-          # TF ENVIRONMENT
-          ls ../
           tf -cloud aws plan -var-file ../test_data/test-managed-policy.tfvars
           tf -cloud aws plan -var-file ../test_data/test-inline-policy.tfvars
         env:
