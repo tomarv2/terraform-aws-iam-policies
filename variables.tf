@@ -13,26 +13,22 @@ variable "profile_to_use" {
 
 variable "name" {
   description = "The name of the policy"
-  type        = string
   default     = null
 }
 
 variable "path" {
   description = "The path of the policy in IAM"
-  type        = string
   default     = "/"
 }
 
 variable "description" {
   description = "The description of the policy"
-  type        = string
   default     = null
 }
 
 variable "policy_file" {
   description = "The path of the policy in IAM (tpl file)"
-  type        = string
-  default     = ""
+  default     = null
 }
 
 variable "aws_region" {
@@ -44,5 +40,5 @@ variable "inline_policy" {
 }
 
 variable "role_name" {
-  default = ""
+  default = null
 }
