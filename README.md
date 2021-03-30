@@ -75,11 +75,10 @@ Please refer to examples directory [link](examples) for references.
 module "inline_policy" {
  source = "git::git@github.com:tomarv2/terraform-aws-iam-policies.git?ref=v0.0.1"
 
-  name           = "demo-iam-policy"
-  # NOTE `profile_to_use` is optional
+  name           = "demo-lambda-policy"
   profile_to_use = "iam-admin"
-  role_name      = <existing IAM role name>
-  policy_file    = "../sample/test-policy.json"
+  role_name      = "demo-role"
+  policy_file    = "sample-policy.json"
   inline_policy  = true
   #-----------------------------------------------
   # Note: Do not change teamid and prjid once set.
@@ -95,9 +94,8 @@ module "managed_policy" {
  source = "git::git@github.com:tomarv2/terraform-aws-iam-policies.git?ref=v0.0.1"
 
   name           = "demo-lambda-policy"
-  # NOTE `profile_to_use` is optional
   profile_to_use = "iam-admin"
-  policy_file    = "../sample/test-policy.json"
+  policy_file    = "sample-policy.json"
   #-----------------------------------------------
   # Note: Do not change teamid and prjid once set.
   teamid = var.teamid
