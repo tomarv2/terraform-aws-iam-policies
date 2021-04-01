@@ -8,7 +8,8 @@ resource "aws_iam_policy" "managed_policy" {
   name        = local.policy_name
   description = var.description == null ? "Terraform managed: ${var.teamid}-${var.prjid}" : var.description
   path        = var.path
-  policy      = file(var.policy_file)
+  # NOTE: policy can be json data or file
+  policy      = var.policy_json
 }
 
 resource "aws_iam_role_policy" "inline_policy" {
@@ -16,5 +17,6 @@ resource "aws_iam_role_policy" "inline_policy" {
 
   name   = local.policy_name
   role   = var.role_name
-  policy = file(var.policy_file)
+  # NOTE: policy can be json data or file
+  policy = var.policy_json
 }
