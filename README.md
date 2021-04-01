@@ -78,7 +78,7 @@ module "inline_policy" {
   name           = "demo-lambda-policy"
   profile_to_use = "iam-admin"
   role_name      = "demo-role"
-  policy_file    = "sample-policy.json"
+  policy_file    = file("sample-policy.json")
   inline_policy  = true
   #-----------------------------------------------
   # Note: Do not change teamid and prjid once set.
@@ -95,7 +95,7 @@ module "managed_policy" {
 
   name           = "demo-lambda-policy"
   profile_to_use = "iam-admin"
-  policy_file    = "sample-policy.json"
+  policy_file    = file("sample-policy.json")
   #-----------------------------------------------
   # Note: Do not change teamid and prjid once set.
   teamid = var.teamid

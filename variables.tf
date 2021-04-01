@@ -26,10 +26,17 @@ variable "description" {
   default     = null
 }
 
-variable "policy_file" {
-  description = "The path of the policy in IAM (tpl file)"
+variable "policy_json" {
+  description = "The policy json"
   default     = null
 }
+
+
+variable "policy_file" {
+  description = "The policy json"
+  default     = null
+}
+
 
 variable "aws_region" {
   default = "us-west-2"
