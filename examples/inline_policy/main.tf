@@ -4,8 +4,8 @@ module "inline_policy" {
   name           = "demo-lambda-policy"
   profile_to_use = "iam-admin"
   role_name      = "demo-role"
-  #policy_json    = file("sample-policy.json")
-  policy_json   = <<EOF
+  #policy    = file("sample-policy.json")
+  policy        = <<EOF
     {
          "Version": "2012-10-17",
          "Statement": [

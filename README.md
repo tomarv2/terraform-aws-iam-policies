@@ -73,7 +73,7 @@ Please refer to examples directory [link](examples) for references.
 
 ```
 module "inline_policy" {
- source = "git::git@github.com:tomarv2/terraform-aws-iam-policies.git?ref=v0.0.1"
+ source = "git::git@github.com:tomarv2/terraform-aws-iam-policies.git"
 
   name           = "demo-lambda-policy"
   profile_to_use = "iam-admin"
@@ -91,7 +91,7 @@ module "inline_policy" {
 
 ```
 module "managed_policy" {
- source = "git::git@github.com:tomarv2/terraform-aws-iam-policies.git?ref=v0.0.1"
+ source = "git::git@github.com:tomarv2/terraform-aws-iam-policies.git"
 
   name           = "demo-lambda-policy"
   profile_to_use = "iam-admin"
