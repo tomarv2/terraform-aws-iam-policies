@@ -5,7 +5,7 @@ module "inline_policy" {
   profile_to_use = "iam-admin"
   role_name      = "demo-role"
   #policy_json    = file("sample-policy.json")
-  policy_json = <<EOF
+  policy_json   = <<EOF
     {
          "Version": "2012-10-17",
          "Statement": [
@@ -20,7 +20,7 @@ module "inline_policy" {
          ]
     }
     EOF
-  inline_policy  = true
+  inline_policy = true
   #-----------------------------------------------
   # Note: Do not change teamid and prjid once set.
   teamid = var.teamid
