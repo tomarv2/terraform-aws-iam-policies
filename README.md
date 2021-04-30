@@ -20,18 +20,27 @@
 ## Versions
 
 - Module tested for Terraform 0.14.
-- AWS provider version [3.29.0](https://registry.terraform.io/providers/hashicorp/aws/latest)
+- AWS provider version [3.30.0](https://registry.terraform.io/providers/hashicorp/aws/latest)
 - `main` branch: Provider versions not pinned to keep up with Terraform releases
 - `tags` releases: Tags are pinned with versions (use <a href="https://github.com/tomarv2/terraform-aws-iam-policies/tags" alt="GitHub tag">
         <img src="https://img.shields.io/github/v/tag/tomarv2/terraform-aws-iam-policies" /></a> in your releases)
 
-**NOTE:**
-
-- Read more on [tfremote](https://github.com/tomarv2/tfremote)
-
+---
 ## Usage
 
-Recommended method:
+### Option 1:
+
+```
+terrafrom init
+terraform plan -var='teamid=tryme' -var='prjid=project1'
+terraform apply -var='teamid=tryme' -var='prjid=project1'
+terraform destroy -var='teamid=tryme' -var='prjid=project1'
+```
+**Note:** With this option please take care of remote state storage
+
+### Option 2:
+
+#### Recommended method (store remote state in S3 using prjid and teamid to create directory structure):
 
 - Create python 3.6+ virtual environment
 ```
@@ -66,6 +75,10 @@ tf -cloud aws apply -var='teamid=foo' -var='prjid=bar'
 ```
 tf -cloud aws destroy -var='teamid=foo' -var='prjid=bar'
 ```
+**NOTE:**
+
+- Read more on [tfremote](https://github.com/tomarv2/tfremote)
+---
 
 Please refer to examples directory [link](examples) for references.
 
@@ -76,7 +89,6 @@ module "inline_policy" {
  source = "git::git@github.com:tomarv2/terraform-aws-iam-policies.git"
 
   name           = "demo-lambda-policy"
-  profile_to_use = "iam-admin"
   role_name      = "demo-role"
   policy_file    = file("sample-policy.json")
   inline_policy  = true
@@ -94,7 +106,6 @@ module "managed_policy" {
  source = "git::git@github.com:tomarv2/terraform-aws-iam-policies.git"
 
   name           = "demo-lambda-policy"
-  profile_to_use = "iam-admin"
   policy_file    = file("sample-policy.json")
   #-----------------------------------------------
   # Note: Do not change teamid and prjid once set.
