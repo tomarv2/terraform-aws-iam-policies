@@ -39,16 +39,19 @@ variable "policy" {
 }
 
 variable "aws_region" {
-  default = "us-west-2"
-  type    = string
+  description = "aws region"
+  default     = "us-west-2"
+  type        = string
 }
 
 variable "inline_policy" {
-  default = false
-  type    = bool
+  description = "Is it an Inline Policy"
+  default     = false
+  type        = bool
 }
 
 variable "role_name" {
-  default = null
-  type    = string
+  description = "Existing iam role name"
+  default     = null
+  type        = string
 }
