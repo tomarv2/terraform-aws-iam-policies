@@ -8,12 +8,6 @@ variable "prjid" {
   type        = string
 }
 
-variable "profile_to_use" {
-  description = "Getting values from ~/.aws/credentials"
-  default     = "default"
-  type        = string
-}
-
 variable "name" {
   description = "The name of the policy"
   default     = null
