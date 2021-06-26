@@ -32,12 +32,6 @@ variable "policy" {
   type        = string
 }
 
-variable "aws_region" {
-  description = "aws region"
-  default     = "us-west-2"
-  type        = string
-}
-
 variable "inline_policy" {
   description = "Is it an Inline Policy"
   default     = false
