@@ -49,7 +49,7 @@ python3 -m venv <venv name>
 
 - Install package:
 ```
-pip install tfremote
+pip install tfremote --upgrade
 ```
 
 - Set below environment variables:

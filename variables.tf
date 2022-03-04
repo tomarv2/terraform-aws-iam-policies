@@ -43,3 +43,9 @@ variable "role_name" {
   default     = null
   type        = string
 }
+
+variable "deploy_iam_policy" {
+  description = "feature flag to deploy this resource or not"
+  type        = bool
+  default     = true
+}
