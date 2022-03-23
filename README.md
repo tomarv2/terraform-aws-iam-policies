@@ -13,20 +13,20 @@
         <img src="https://img.shields.io/twitter/follow/varuntomar2019?style=social&logo=twitter"></a>
 </p>
 
-# Terraform module for AWS IAM policies
+## Terraform module for AWS IAM policies
 
-## Versions
+### Versions
 
 - Module tested for Terraform 1.0.1.
-- AWS provider version [3.63](https://registry.terraform.io/providers/hashicorp/aws/latest).
+- AWS provider version [3.74](https://registry.terraform.io/providers/hashicorp/aws/latest).
 - `main` branch: Provider versions not pinned to keep up with Terraform releases.
 - `tags` releases: Tags are pinned with versions (use <a href="https://github.com/tomarv2/terraform-aws-iam-policies/tags" alt="GitHub tag">
         <img src="https://img.shields.io/github/v/tag/tomarv2/terraform-aws-iam-policies" /></a> in your releases).
 
 ---
-## Usage
+### Usage
 
-### Option 1:
+#### Option 1:
 
 ```
 terrafrom init
@@ -36,7 +36,7 @@ terraform destroy -var='teamid=tryme' -var='prjid=project1'
 ```
 **Note:** With this option please take care of remote state storage
 
-### Option 2:
+#### Option 2:
 
 #### Recommended method (store remote state in S3 using prjid and teamid to create directory structure):
 
@@ -84,11 +84,7 @@ tf -c=aws apply -var='teamid=foo' -var='prjid=bar'
 tf -c=aws destroy -var='teamid=foo' -var='prjid=bar'
 ```
 
-**NOTE:**
-
-- Read more on [tfremote](https://github.com/tomarv2/tfremote)
----
-
+**Note:** Read more on [tfremote](https://github.com/tomarv2/tfremote)
 Please refer to examples directory [link](examples) for references.
 
 #### Attach Inline IAM policy to an existing role
