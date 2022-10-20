@@ -1,49 +1,39 @@
 output "managed_policy_id" {
-  description = "The policy's ID"
-  value       = aws_iam_policy.managed_policy.*.id
+  description = "The Id of the managed policy"
+  value       = [for policy in aws_iam_policy.managed_policy : policy.id]
 }
 
 output "managed_policy_arn" {
-  description = "The ARN assigned by AWS to this policy"
-  value       = aws_iam_policy.managed_policy.*.arn
+  description = "The ARN of the managed policy"
+  value       = [for policy in aws_iam_policy.managed_policy : policy.arn]
 }
 
 output "managed_policy_description" {
-  description = "The description of the policy"
-  value       = aws_iam_policy.managed_policy.*.description
+  description = "The description of the managed policy"
+  value       = [for policy in aws_iam_policy.managed_policy : policy.description]
 }
 
 output "managed_policy_name" {
   description = "The name of the managed policy"
-  value       = aws_iam_policy.managed_policy.*.name
+  value       = [for policy in aws_iam_policy.managed_policy : policy.name]
 }
 
 output "managed_policy_path" {
-  description = "The path of the policy in IAM"
-  value       = aws_iam_policy.managed_policy.*.path
-}
-
-output "managed_policy" {
-  description = "The managed policy document"
-  value       = aws_iam_policy.managed_policy.*.policy
+  description = "The path of the managed policy in IAM"
+  value       =  [for policy in aws_iam_policy.managed_policy : policy.path]
 }
 
 output "inline_policy_name" {
   description = "The name of the inline policy"
-  value       = aws_iam_role_policy.inline_policy.*.name
-}
-
-output "inline_policy" {
-  description = "The inline policy document"
-  value       = aws_iam_role_policy.inline_policy.*.policy
+  value       = [for policy in aws_iam_role_policy.inline_policy : policy.name]
 }
 
 output "inline_policy_id" {
-  description = "The policy's ID"
-  value       = aws_iam_role_policy.inline_policy.*.id
+  description = "The Id of the inline policy"
+  value       = [for policy in aws_iam_role_policy.inline_policy : policy.id]
 }
 
 output "inline_policy_role" {
-  description = "The role name to which this policy is attached"
-  value       = aws_iam_role_policy.inline_policy.*.role
+  description = "The role name to which inline policy is attached"
+  value       = [for policy in aws_iam_role_policy.inline_policy : policy.role]
 }
