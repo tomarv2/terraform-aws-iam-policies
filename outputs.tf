@@ -20,7 +20,7 @@ output "managed_policy_name" {
 
 output "managed_policy_path" {
   description = "The path of the managed policy in IAM"
-  value       =  [for policy in aws_iam_policy.managed_policy : policy.path]
+  value       = [for policy in aws_iam_policy.managed_policy : policy.path]
 }
 
 output "inline_policy_name" {

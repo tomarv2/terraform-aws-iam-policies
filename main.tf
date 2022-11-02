@@ -5,8 +5,8 @@ resource "aws_iam_policy" "managed_policy" {
   description = try(each.key.description, "Terraform managed: ${var.teamid}-${var.prjid}")
   path        = try(each.key.path, "/")
   # NOTE: policy can be json data or file
-  policy      = each.value.policy
-  tags              = merge(local.shared_tags, var.extra_tags)
+  policy = each.value.policy
+  tags   = merge(local.shared_tags, var.extra_tags)
 }
 
 resource "aws_iam_role_policy" "inline_policy" {
