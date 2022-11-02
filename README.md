@@ -119,8 +119,6 @@ No modules.
 | <a name="input_extra_tags"></a> [extra\_tags](#input\_extra\_tags) | Additional tags to associate | `map(string)` | `{}` | no |
 | <a name="input_inline_policy_config"></a> [inline\_policy\_config](#input\_inline\_policy\_config) | Inline policies configuration | `map(any)` | `{}` | no |
 | <a name="input_managed_policy_config"></a> [managed\_policy\_config](#input\_managed\_policy\_config) | Managed policies configuration | `map(any)` | `{}` | no |
-| <a name="input_prjid"></a> [prjid](#input\_prjid) | Name of the project/stack e.g: mystack, nifieks, demoaci. Should not be changed after running 'tf apply' | `string` | n/a | yes |
-| <a name="input_teamid"></a> [teamid](#input\_teamid) | Name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply' | `string` | n/a | yes |
 
 ## Outputs
 
